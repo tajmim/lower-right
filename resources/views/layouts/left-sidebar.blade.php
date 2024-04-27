@@ -8,7 +8,7 @@
                     </a>
                 </li>
                 <li class="">
-                    <a href="../app/profile.html" class=" ">
+                    <a href="{{route('profile')}}" class=" ">
                         <i class="las la-user"></i><span>Profile</span>
                     </a>
                 </li>

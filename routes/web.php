@@ -24,5 +24,6 @@ Route::post('register', [AuthController::class, 'register'])->name('register');
 
 Route::get('/signout', [AuthController::class, 'signOut'])->name('signout');
 Route::get('/newsfeed', [HomeController::class, 'newsfeed'])->name('newsfeed');
+Route::get('/profile', [HomeController::class, 'profile'])->name('profile');
 
 

@@ -12,4 +12,7 @@ class HomeController extends Controller
     public function newsfeed(){
         return view('dashboard');
     }
+    public function profile(){
+        return view('profile');
+    }
 }
