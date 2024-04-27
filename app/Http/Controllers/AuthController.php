@@ -32,6 +32,10 @@ class AuthController extends Controller
         return redirect()->back()->withErrors(['email' => 'The provided credentials do not match our records.']);
     }
 
+    public function signup(){
+        return view('sign-up');
+    }
+
 
     public function register(Request $request)
     {
