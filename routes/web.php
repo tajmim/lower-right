@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,4 +27,4 @@ Route::get('/signout', [AuthController::class, 'signOut'])->name('signout');
 Route::get('/newsfeed', [HomeController::class, 'newsfeed'])->name('newsfeed');
 Route::get('/profile', [HomeController::class, 'profile'])->name('profile');
 
-
+Route::resource('/posts', PostController::class);
