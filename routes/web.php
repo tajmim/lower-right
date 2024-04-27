@@ -20,6 +20,9 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/register', [AuthController::class, 'signup'])->name('register');
 Route::post('login', [AuthController::class, 'login'])->name('login');
 Route::post('register', [AuthController::class, 'register'])->name('register');
+
+
 Route::get('/signout', [AuthController::class, 'signOut'])->name('signout');
+Route::get('/newsfeed', [HomeController::class, 'newsfeed'])->name('newsfeed');
 
 

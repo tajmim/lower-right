@@ -26,7 +26,7 @@ class AuthController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            return view('dashboard');
+            return redirect()->route('newsfeed');
         }
 
         return redirect()->back()->withErrors(['email' => 'The provided credentials do not match our records.']);
@@ -62,7 +62,7 @@ class AuthController extends Controller
     {
         Auth::logout();
 
-        
+
         return redirect()->route('home');
     }
 }

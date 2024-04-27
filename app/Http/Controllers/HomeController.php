@@ -9,4 +9,7 @@ class HomeController extends Controller
     public function index(){
         return view('sign-in');
     }
+    public function newsfeed(){
+        return view('dashboard');
+    }
 }
