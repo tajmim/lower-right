@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Post;
 
 class HomeController extends Controller
 {
@@ -13,6 +14,8 @@ class HomeController extends Controller
         return view('dashboard');
     }
     public function profile(){
-        return view('profile');
+        $posts = Post::where('user_id',auth()->user()->id)->get();
+        // dd($posts);
+        return view('profile',compact('posts'));
     }
 }

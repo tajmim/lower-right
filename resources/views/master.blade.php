@@ -3,6 +3,7 @@
    @include('layouts.head')
 
 
+
 <body class="  ">
     <!-- loader Start -->
     <div id="loading">
