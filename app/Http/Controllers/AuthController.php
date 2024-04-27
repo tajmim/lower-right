@@ -58,4 +58,11 @@ class AuthController extends Controller
         $user->save();
         return redirect()->back()->with(['success' => 'You are Registered Successfully'], 200);
     }
+    public function signOut()
+    {
+        Auth::logout();
+
+        
+        return redirect()->route('home');
+    }
 }
