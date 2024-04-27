@@ -616,8 +616,9 @@
                                               </div>
                                           </a>
                                           <div class="d-inline-block w-100 text-center p-3">
-                                              <a class="btn btn-primary iq-sign-btn" href="../dashboard/sign-in.html" role="button">Sign
-                                                  out<i class="ri-login-box-line ms-2"></i></a>
+                                             <a class="btn btn-primary iq-sign-btn" href="{{ route('signout') }}" role="button">Sign out
+                                                <i class="ri-login-box-line ms-2"></i></a>
+
                                           </div>
                                       </div>
                                   </div>
