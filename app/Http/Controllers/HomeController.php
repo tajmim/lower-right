@@ -7,15 +7,23 @@ use App\Models\Post;
 
 class HomeController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         return view('sign-in');
     }
-    public function newsfeed(){
+    public function newsfeed()
+    {
         return view('dashboard');
     }
-    public function profile(){
-        $posts = Post::where('user_id',auth()->user()->id)->get();
+    public function profile()
+    {
+
+        $posts = Post::where('user_id', auth()->user()->id)
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+
         // dd($posts);
-        return view('profile',compact('posts'));
+        return view('profile', compact('posts'));
     }
 }

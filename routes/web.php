@@ -23,8 +23,13 @@ Route::post('login', [AuthController::class, 'login'])->name('login');
 Route::post('register', [AuthController::class, 'register'])->name('register');
 
 
-Route::get('/signout', [AuthController::class, 'signOut'])->name('signout');
-Route::get('/newsfeed', [HomeController::class, 'newsfeed'])->name('newsfeed');
-Route::get('/profile', [HomeController::class, 'profile'])->name('profile');
 
-Route::resource('/posts', PostController::class);
+
+
+Route::middleware(['islogin'])->group(function () {
+    Route::get('/signout', [AuthController::class, 'signOut'])->name('signout');
+    Route::get('/newsfeed', [HomeController::class, 'newsfeed'])->name('newsfeed');
+    Route::get('/profile', [HomeController::class, 'profile'])->name('profile');
+    Route::resource('/posts', PostController::class);
+});
+
