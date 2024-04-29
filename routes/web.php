@@ -16,12 +16,12 @@ use App\Http\Controllers\PostController;
 |
 */
 
-
-Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/register', [AuthController::class, 'signup'])->name('register');
-Route::post('login', [AuthController::class, 'login'])->name('login');
-Route::post('register', [AuthController::class, 'register'])->name('register');
-
+Route::middleware(['isauth'])->group(function () {
+    Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::get('/register', [AuthController::class, 'signup'])->name('register');
+    Route::post('login', [AuthController::class, 'login'])->name('login');
+    Route::post('register', [AuthController::class, 'register'])->name('register');
+});
 
 
 
@@ -32,4 +32,3 @@ Route::middleware(['islogin'])->group(function () {
     Route::get('/profile', [HomeController::class, 'profile'])->name('profile');
     Route::resource('/posts', PostController::class);
 });
-
