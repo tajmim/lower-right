@@ -21,7 +21,7 @@
                                                 class="avatar-130 img-fluid" />
                                         </div>
                                         <div class="profile-detail">
-                                            <h3 class="">Bni Cyst</h3>
+                                            <h3 class="">{{Auth::user()->name}}</h3>
                                         </div>
                                     </div>
                                     <div
