@@ -59,7 +59,8 @@ class PostController extends Controller
      */
     public function update(UpdatePostRequest $request, Post $post)
     {
-        //
+        $post->update(['description'=>$request->description]);
+        return redirect()->back();
     }
 
     /**

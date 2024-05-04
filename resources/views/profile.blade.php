@@ -581,10 +581,19 @@
                                                                                             <i
                                                                                                 class="ri-delete-bin-7-line h4"></i>
                                                                                             <div class="data ms-2">
-                                                                                                <h6>Delete</h6>
-                                                                                                <p class="mb-0">
-                                                                                                    Remove thids Post on
-                                                                                                    Timeline</p>
+
+                                                                                                <form action="{{route('posts.destroy',$post->id)}}" method="POST">
+                                                                                                    @csrf
+                                                                                                    @method('DELETE')
+                                                                                                    <button type="submit" class="text-left" style="outline: 0">
+                                                                                                        <h6>Delete</h6>
+                                                                                                        <p class="mb-0">Remove thids Post on Timeline</p>
+                                                                                                    </button>
+                                                                                                </form>
+
+
+
+
                                                                                             </div>
                                                                                         </div>
                                                                                     </a>
@@ -826,20 +835,24 @@
                                                               <h1 class="modal-title fs-5" id="staticBackdropLabel">Edit Post</h1>
                                                               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                             </div>
+                                                            <form action="{{route('posts.update',$post->id)}}" method="POST">
                                                             <div class="modal-body">
-                                                              <form action="">
+
+                                                                @csrf
+                                                                @method('PUT')
                                                                 <div class="row justify-content-center">
                                                                     <div class="col-8">
                                                                         <label for="post_data">Post</label>
-                                                                        <input type="text" class="form-control" value="{{$post->description}}">
+                                                                        <input type="text" class="form-control" value="{{$post->description}}" name="description">
                                                                     </div>
                                                                 </div>
-                                                              </form>
+
                                                             </div>
                                                             <div class="modal-footer">
                                                               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                                              <button type="button" class="btn btn-primary">Update</button>
+                                                              <button type="submit" class="btn btn-primary">Update</button>
                                                             </div>
+                                                        </form>
                                                           </div>
                                                         </div>
                                                       </div>
