@@ -13,9 +13,9 @@
                 </div>
             </div>
             <div class="iq-search-bar device-search">
-                <form action="#" class="searchbox">
-                    <a class="search-link" href="#"><i class="ri-search-line"></i></a>
-                    <input type="text" class="text search-input" placeholder="Search here...">
+                <form action="{{route('search')}}" class="searchbox" method="GET">
+                    <a class="search-link" type="submit"><i class="ri-search-line"></i></a>
+                    <input type="text" class="text search-input" placeholder="Search here..." name="q">
                 </form>
             </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"

@@ -12,4 +12,8 @@
     <link rel="stylesheet" href="../assets/vendor/font-awesome-line-awesome/css/all.min.css">
     <link rel="stylesheet" href="../assets/vendor/line-awesome/dist/line-awesome/css/line-awesome.min.css">
 
+    {{-- tostr --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+
 </head>

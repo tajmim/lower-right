@@ -35,7 +35,7 @@ class PostController extends Controller
             'description' => $request->description,
 
         ]);
-        return redirect()->back()->with(['message'=>'post created successfully']);
+        return redirect()->back()->with(['success'=>'post created successfully']);
     }
 
     /**
@@ -60,7 +60,7 @@ class PostController extends Controller
     public function update(UpdatePostRequest $request, Post $post)
     {
         $post->update(['description'=>$request->description]);
-        return redirect()->back();
+        return redirect()->back()->with(['success'=>'post updated successfully']);
     }
 
     /**
@@ -69,7 +69,7 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
         $post->delete();
-        return redirect()->back()->with('message', 'post Deleted Successfully');
+        return redirect()->back()->with('success', 'post Deleted Successfully');
 
     }
 }

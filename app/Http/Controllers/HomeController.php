@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\User;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -25,5 +26,12 @@ class HomeController extends Controller
 
         // dd($posts);
         return view('profile', compact('posts'));
+    }
+
+    public function search(Request $request)
+    {
+        $users = User::where('name', 'like', '%' . $request->q . '%')->get();
+
+        return view('user_search_result', compact('users'));
     }
 }
