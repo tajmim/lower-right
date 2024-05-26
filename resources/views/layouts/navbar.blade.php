@@ -311,7 +311,7 @@
                                             </div>
                                         </div>
                                     </a>
-                                    <a href="../app/profile-edit.html"
+                                    <a href="{{route('edit.profile')}}"
                                         class="iq-sub-card iq-bg-warning-hover">
                                         <div class="d-flex align-items-center">
                                             <div class="rounded card-icon bg-soft-warning">

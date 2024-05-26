@@ -22,10 +22,12 @@ class HomeController extends Controller
         $posts = Post::where('user_id', auth()->user()->id)
             ->orderBy('created_at', 'desc')
             ->get();
-
-
         // dd($posts);
         return view('profile', compact('posts'));
+    }
+    public function edit_profile()
+    {
+        return view('edit_profile');
     }
 
     public function search(Request $request)
